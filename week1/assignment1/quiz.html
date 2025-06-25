@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="quizstyle.css" />
+</head>
+<body>
+  <header>
+    <h1>Quiz App</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar-left">
+      <h3>Time Left:</h3>
+      <div id="timer">10</div>
+    </aside>
+    <main class="main-content">
+      <div id="quiz-box">
+        <h2 id="question">Loading question...</h2>
+        <form id="options-form">
+        <label><input type="radio" name="option" value="1" /><span id="option0">Option 1</span></label><br>
+        <label><input type="radio" name="option" value="2" /><span id="option1">Option 2</span></label><br>
+        <label><input type="radio" name="option" value="3" /><span id="option2">Option 3</span></label><br>
+        <label><input type="radio" name="option" value="4" /><span id="option3">Option 4</span></label><br>
+        </form>
+        <button id="next-btn">Next</button>
+      </div>
+      <div id="result-popup" class="overlay hidden">
+<div class="popup">
+    <h2>Quiz Summary</h2>
+    <p id="summary-text"></p>
+    <div id="review-container"></div>
+    <button onclick="closeSummary()">Close</button>
+  </div>
+</div>
+
+    </main>
+
+    <aside class="sidebar-right">
+      <h3>Score</h3>
+      <div id="score">0</div>
+      
+    </aside>
+    <footer>
+        <button id="restart-btn">Restart</button>
+    </footer>
+  </div>
+  <script src="quiz.js"></script>
+</body>
+</html>
