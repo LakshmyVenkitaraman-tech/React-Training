@@ -15,13 +15,38 @@
     "answer": 3
   },
   {
-    "q":"Who developed C ?",
-    "options":["Tim Berners Lee","Fernando Alonso","Larry page","Dennis Ritchie"],
-    "answer":4
+    "q": "Who developed C?",
+    "options": ["Tim Berners Lee", "Fernando Alonso", "Larry Page", "Dennis Ritchie"],
+    "answer": 4
   },
   {
-    "q":"Who developed C++?",
-    "options":["Dennis Ritchie","Bjarne Stoustroup","Edwin Aldrin","Linus Torvalds"],
-    "answer":2
+    "q": "Who developed C++?",
+    "options": ["Dennis Ritchie", "Bjarne Stroustrup", "Edwin Aldrin", "Linus Torvalds"],
+    "answer": 2
+  },
+  {
+    "q": "Which HTML tag is used to define an internal style sheet?",
+    "options": ["<style>", "<script>", "<css>", "<link>"],
+    "answer": 1
+  },
+  {
+    "q": "Which property is used in CSS to change text color?",
+    "options": ["font-color", "text-color", "color", "background-color"],
+    "answer": 3
+  },
+  {
+    "q": "Inside which HTML element do we put the JavaScript?",
+    "options": ["<js>", "<script>", "<javascript>", "<code>"],
+    "answer": 2
+  },
+  {
+    "q": "Which symbol is used for comments in JavaScript?",
+    "options": ["<!-- -->", "/* */", "//", "#"],
+    "answer": 3
+  },
+  {
+    "q": "What does JSON stand for?",
+    "options": ["JavaScript Oriented Notation", "Java Standard Output Name", "JavaScript Object Notation", "None of the above"],
+    "answer": 3
   }
 ]
