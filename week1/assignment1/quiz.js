@@ -38,10 +38,10 @@ function startQuiz() {
   renderOptions();
   showQuestion();
 }
-
 function renderOptions() {
   optionsForm.innerHTML = "";
-  for (let i = 0; i < 4; i++) {
+  const current = questions[currentQuestionIndex];
+  for (let i = 0; i < current.options.length; i++) {
     const label = document.createElement("label");
     label.innerHTML = `
       <input type="radio" name="option" value="${i + 1}"> 
@@ -100,7 +100,6 @@ function checkAnswer() {
     }
     input.disabled = true;
   });
-
   const selectedValue = selected ? parseInt(selected.value) : null;
   if (selectedValue === correctAnswer) {
     score++;
@@ -113,7 +112,6 @@ function checkAnswer() {
     selectedAnswer: selectedValue
   });
 }
-
 function nextQuestion() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -133,10 +131,12 @@ function endQuiz() {
 
   userAnswers.forEach((item, index) => {
     const qEl = document.createElement("div");
+
     const correctOption = questions[index].options[item.correctAnswer - 1];
-    const userOption = item.selectedAnswer
+    const userOption = item.selectedAnswer != null
       ? questions[index].options[item.selectedAnswer - 1]
       : "No Answer";
+
     const isCorrect = item.correctAnswer === item.selectedAnswer;
 
     qEl.innerHTML = `
