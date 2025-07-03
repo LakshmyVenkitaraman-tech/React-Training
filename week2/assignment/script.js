@@ -1,13 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  loadTasksFromStorage();
+});
+
 document.getElementById("addTaskBtn").addEventListener("click", () => {
   const input = document.getElementById("taskInput");
   const text = input.value.trim();
   if (!text) return;
 
-  const task = createTaskCard(text);
+  const task = createTaskCard(text, "todo");
   document.getElementById("todo").appendChild(task);
   input.value = "";
+  saveTasksToStorage();
 });
-function createTaskCard(text) {
+
+function createTaskCard(text, columnId) {
   const task = document.createElement("div");
   task.className = "bg-white p-4 rounded shadow w-full mb-3";
   task.setAttribute("draggable", "true");
@@ -20,7 +26,10 @@ function createTaskCard(text) {
   buttons.className = "flex justify-end gap-3 mt-2";
 
   const editBtn = createTextButton("Edit", "bg-blue-500 hover:bg-blue-600", handleEdit);
-  const delBtn = createTextButton("Delete", "bg-red-500 hover:bg-red-600", () => task.remove());
+  const delBtn = createTextButton("Delete", "bg-red-500 hover:bg-red-600", () => {
+    task.remove();
+    saveTasksToStorage();
+  });
 
   buttons.append(editBtn, delBtn);
 
@@ -34,6 +43,7 @@ function createTaskCard(text) {
         content.textContent = input.value.trim();
         resetButtons();
         task.replaceChild(content, input);
+        saveTasksToStorage();
       }
     });
 
@@ -85,5 +95,31 @@ function drop(e) {
   const column = e.currentTarget;
   if (window.draggedTask) {
     column.appendChild(window.draggedTask);
+    saveTasksToStorage();
   }
+}
+function saveTasksToStorage() {
+  const columns = ["todo", "inProgress", "done"];
+  const tasks = [];
+
+  columns.forEach((colId) => {
+    const column = document.getElementById(colId);
+    const taskDivs = column.querySelectorAll("div[draggable='true']");
+    taskDivs.forEach((taskDiv) => {
+      const text = taskDiv.querySelector("div").textContent;
+      tasks.push({ text, column: colId });
+    });
+  });
+
+  localStorage.setItem("kanbanTasks", JSON.stringify(tasks));
+}
+function loadTasksFromStorage() {
+  const saved = localStorage.getItem("kanbanTasks");
+  if (!saved) return;
+
+  const tasks = JSON.parse(saved);
+  tasks.forEach(({ text, column }) => {
+    const task = createTaskCard(text, column);
+    document.getElementById(column).appendChild(task);
+  });
 }
