@@ -2,34 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanban Todo</title>
-  <link rel="stylesheet" href="./dist/output.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanban Board</title>
+  <link href="./output.css" rel="stylesheet">
+
 </head>
-<body class="bg-gray-100 font-sans p-8">
-  <h1 class="text-3xl font-bold text-center mb-6">Kanban Board</h1>
+<body class="bg-gray-100 p-6 font-sans">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-6">Kanban Board</h1>
+    <div class="bg-white p-4 rounded shadow mb-6">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="Add a new task"
+        class="w-full border p-2 rounded mb-2"
+      />
+      <button
+        id="addTaskBtn"
+        class="bg-purple-500 hover:bg-purple-600 text-white w-full py-2 rounded font-semibold"
+      >
+        Add Task
+      </button>
+    </div>
 
-  <div class="max-w-2xl mx-auto mb-6 bg-white shadow p-4 rounded">
-    <input id="taskInput" type="text" placeholder="Add a new task"
-      class="w-full p-2 border border-gray-300 rounded mb-2" />
-    <button id="addTaskBtn"
-      class="w-full bg-purple-500 text-white font-semibold py-2 rounded hover:bg-purple-600 transition">
-      Add Task
-    </button>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="todo" class="bg-yellow-200 p-4 rounded min-h-[300px] space-y-3" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2 class="font-bold mb-2">Tasks</h2>
+      </div>
+      <div id="inProgress" class="bg-green-200 p-4 rounded min-h-[300px] space-y-3" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2 class="font-bold mb-2">In Progress</h2>
+      </div>
+      <div id="done" class="bg-blue-200 p-4 rounded min-h-[300px] space-y-3" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2 class="font-bold mb-2">Done</h2>
+      </div>
+    </div>
   </div>
 
-  <div class="flex justify-center gap-6 flex-wrap">
-    <div id="todo" ondrop="drop(event)" ondragover="allowDrop(event)" class="w-72 bg-yellow-200 rounded p-4 shadow space-y-4 min-h-[300px]">
-      <h2 class="font-bold text-lg text-center">Tasks</h2>
-    </div>
-    <div id="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)" class="w-72 bg-green-200 rounded p-4 shadow space-y-4 min-h-[300px]">
-      <h2 class="font-bold text-lg text-center">In Progress</h2>
-    </div>
-    <div id="done" ondrop="drop(event)" ondragover="allowDrop(event)" class="w-72 bg-blue-200 rounded p-4 shadow space-y-4 min-h-[300px]">
-      <h2 class="font-bold text-lg text-center">Done</h2>
-    </div>
-  </div>
-
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
