@@ -17,11 +17,9 @@ function saveAndRender() {
 
     const actions = document.createElement("div");
     actions.className = "flex gap-2";
-
     const doneBtn = createBtn("Done", "bg-green-500 hover:bg-green-600", () => toggleDone(i));
     const editBtn = createBtn("Edit", "bg-blue-500 hover:bg-blue-600", () => editTodo(i));
     const delBtn = createBtn("Delete", "bg-red-500 hover:bg-red-600", () => removeTodo(i));
-
     actions.append(doneBtn, editBtn, delBtn);
     li.append(span, actions);
     list.appendChild(li);
