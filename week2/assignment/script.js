@@ -7,7 +7,7 @@ document.getElementById("addTaskBtn").addEventListener("click", () => {
   const text = input.value.trim();
   if (!text) return;
 
-  const task = createTaskCard(text, "todo");
+  const task = createTaskCard(text,"todo");
   document.getElementById("todo").appendChild(task);
   input.value = "";
   saveTasksToStorage();
