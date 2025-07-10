@@ -5,7 +5,8 @@ This task demonstrates a  Image Carousel component built using React, Tailwind C
 Getting Started:
  Navigate to the carousel task folder first:
 
-cd week3/task1
+cd week3/task1/src
+
 1.Install Dependencies
 
 npm install
