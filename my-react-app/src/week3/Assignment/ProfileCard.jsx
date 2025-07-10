@@ -22,17 +22,17 @@ const ProfileCard = () => {
       <img
         src={user.image}
         alt={user.name}
-        className="w-36 h-36 object-cover rounded-full mx-auto mb-6 border-4 border-blue-400 shadow-md"
+        className="w-36 h-36 object-cover rounded-full mx-auto mb-6 border-4 shadow-md"
       />
       <h2 className="text-3xl font-extrabold text-gray-800">{user.name}</h2>
       <p className="text-blue-600 font-medium mt-1">{user.bio}</p>
-      <span className="inline-block mt-2 bg-red-100 text-red-700 text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold">
+      <span className="inline-block mt-2  text-red-700 text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold">
         {user.Team}
       </span>
 
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="mt-6 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+        className="mt-6 px-5 py-2 bg-blue-600 text-white rounded-lg "
       >
         {showDetails ? "Hide Details" : "Show Details"}
       </button>
