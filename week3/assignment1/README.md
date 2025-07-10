@@ -1,3 +1,37 @@
+
+ React Profile Card Component (Week 3 – Assignment 1)
+
+This assignment showcases a reusable profile card component in React using Tailwind CSS, designed for flexibility and clean layout.
+ Modular `ProfileCard` and `ProfileDetails` components
+
+Getting Started:
+1.Install Dependencies
+
+npm install
+
+2.Run the App
+
+npm run dev 
+
+3.Tailwind Directives in index.css installed via 
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+Directory Structure
+
+assignment1/
+├── ProfileCard.jsx        
+├── ProfileDetails.jsx    
+├── img4.webp              
+├── index.css             
+├── main.jsx               
+├── App.jsx               
+└── README.md
+
+Repo link:https://github.com/LakshmyVenkitaraman-tech/React-Training
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

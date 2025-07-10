@@ -23,7 +23,7 @@ const Carousel = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="relative w-[700px] h-[750px] rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-[750px] h-[750px] rounded-lg overflow-hidden shadow-lg">
         <img
           src={images[current]}
           alt={`Slide ${current + 1}`}
