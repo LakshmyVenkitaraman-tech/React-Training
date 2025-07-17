@@ -1,19 +1,7 @@
-import React from "react";
-import CarouselApp from "./CarouselApp";
+API Read Access Token
 
-function App() {
-  return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <CarouselApp />
-    </div>
-  );
-}
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZDhlNDZhZDcyMDU0YzljYTQyY2JlMzVlNGJmN2VlMCIsIm5iZiI6MTc1MjcyMzY3Ny4xNTEsInN1YiI6IjY4Nzg3MGRkMDE5YzgxNjliYjIwM2NhNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.j6VB0S8nArJ3E6IfLlwOzBcLx4kEAKWTvhNNPIa3h6s
 
-export default App;
+API Key
 
-
-
-    
-
-      
-        
+3d8e46ad72054c9ca42cbe35e4bf7ee0
